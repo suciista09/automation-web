@@ -1,0 +1,24 @@
+pipeline {
+    agent {
+        node {
+            label "docker-chrome"
+        }
+    }
+
+    stages{
+        stage('Preparation'){
+            steps{
+                ansiColor('xterm'){
+                    sh 'echo preparation'
+                }
+            }
+        }
+
+        stage('Run Test'){
+            ansiColor('xterm'){
+                sh './gradlew --continue clean cucumber --tags "@checkout" generateCucumberReports'
+            }
+        }
+
+    }
+}

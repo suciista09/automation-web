@@ -1,0 +1,24 @@
+pipeline {
+    agent {
+        node {
+            label "docker-chrome"
+        }
+    }
+
+    stages{
+        stage('Sonar Code Analyzer'){
+            steps{
+                ansiColor('xterm'){
+                    sh './gradlew sonarqube'
+                }
+            }
+        }
+
+        stage('Dry Run Check'){
+            ansiColor('xterm'){
+                sh './gradlew clean cucumber --cucumber-dry-run true'
+            }
+        }
+
+    }
+}
