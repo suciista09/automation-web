@@ -8,8 +8,10 @@ pipeline {
     stages{
 
         stage('Dry Run Check'){
-            ansiColor('xterm'){
-                sh './gradlew clean cucumber --cucumber-dry-run true'
+            Steps{
+                ansiColor('xterm'){
+                    sh './gradlew clean cucumber --cucumber-dry-run true'
+                }
             }
         }
 
