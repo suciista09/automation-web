@@ -8,14 +8,12 @@ pipeline {
     stages{
         stage('Preparation'){
             steps{
-                ansiColor('xterm'){
-                    sh 'echo preparation'
-                }
+                sh 'echo preparation'
             }
         }
 
         stage('Run Test'){
-            ansiColor('xterm'){
+            steps{
                 sh './gradlew --continue clean cucumber --tags "@checkout" generateCucumberReports'
             }
         }
