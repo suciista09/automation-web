@@ -8,5 +8,5 @@ Spec to run
 ## How to run <br>
 - `./gradlew --continue clean cucumber --tags "@checkout or @sort" generateCucumberReports`
 ### Run checkout / sorting only 
-    - `./gradlew --continue clean cucumber --tags "@checkout" generateCucumberReports`
-    - `./gradlew --continue clean cucumber --tags "@sort" generateCucumberReports`
+    `./gradlew --continue clean cucumber --tags "@checkout" generateCucumberReports`
+    `./gradlew --continue clean cucumber --tags "@sort" generateCucumberReports`
