@@ -6,7 +6,7 @@ Spec to run
 - chrome latest version installed
 
 ## How to run
- ./gradlew --continue clean cucumber --tags "@checkout or @sort" generateCucumberReports
+ `./gradlew --continue clean cucumber --tags "@checkout or @sort" generateCucumberReports`
 ### Run checkout / sorting only 
     ./gradlew --continue clean cucumber --tags "@checkout" generateCucumberReports
     ./gradlew --continue clean cucumber --tags "@sort" generateCucumberReports
