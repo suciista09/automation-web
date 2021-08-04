@@ -5,7 +5,7 @@ Spec to run
 - Java min 8
 - chrome latest version installed
 
-## How to run <br>
+## How to run
  ./gradlew --continue clean cucumber --tags "@checkout or @sort" generateCucumberReports
 ### Run checkout / sorting only 
     ./gradlew --continue clean cucumber --tags "@checkout" generateCucumberReports
