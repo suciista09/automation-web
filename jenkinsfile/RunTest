@@ -5,6 +5,10 @@ pipeline {
         }
     }
 
+    parameters{
+        string(name: 'BRANCH_TEST', defaultValue:'develop', description: 'branch of testing code to execute')
+    }
+
     stages{
         stage('Preparation'){
             steps{
@@ -14,9 +18,16 @@ pipeline {
 
         stage('Run Test'){
             steps{
-                sh './gradlew --continue clean cucumber --tags "@checkout" generateCucumberReports'
+                sh './gradlew clean cucumber --cucumber-dry-run true'
             }
         }
 
+    }
+
+    post{
+        always{
+            cucumber jsonReportDirectory: 'build',
+                    fileIncludePattern: 'cucumber.json'
+        }
     }
 }
